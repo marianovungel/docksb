@@ -9,7 +9,7 @@ require('./db')
 
 const io = require("socket.io")(process.env.PORT || 3001, {
   cors: {
-    origin: "http://localhost:3000", // Permite solicitações apenas desse endereço
+    origin: ["http://localhost:3000", "https://nexus-editor.vercel.app"], // Permite solicitações apenas desse endereço
     methods: ["GET", "POST"],         // Métodos permitidos
     allowedHeaders: ["Content-Type"],  // Cabeçalhos permitidos (opcional)
     credentials: true,                 // Permite cookies ou credenciais (opcional)
