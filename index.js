@@ -1,5 +1,6 @@
 require('dotenv').config()
-const Document = require("./Document")
+// const Document = require("./Document")
+const Document = require("./models/docModel")
 const express = require('express')
 const app = express()
 var cors = require('cors')
