@@ -6,7 +6,7 @@ require('./db')
 
 const io = require("socket.io")(process.env.PORT || 3001, {
   cors: {
-    origin: "*",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 })
