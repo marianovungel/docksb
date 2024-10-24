@@ -1,5 +1,8 @@
 require('dotenv').config()
 const Document = require("./Document")
+const express = require('express')
+const app = express()
+var cors = require('cors')
 
 //conectar ao Bongodb Atlas
 require('./db')
@@ -12,6 +15,15 @@ const io = require("socket.io")(process.env.PORT || 3001, {
     credentials: true,                 // Permite cookies ou credenciais (opcional)
   },
 });
+
+app.use((req, res, next)=>{
+    res.header("Access-Control-Allow-Origin", "/*");
+    res.header("Access-Control-Allow-Methods", 'GET,POST');
+    app.use(cors())
+    next();
+})
+app.use(cors())
+
 
 
 
